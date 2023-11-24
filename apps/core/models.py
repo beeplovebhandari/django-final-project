@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from apps.commons.models import BaseModel
 
-User = get_user_model
+User = get_user_model()
 
 class Category(BaseModel):
     title = models.CharField(max_length=30)
@@ -23,6 +23,19 @@ class Job(BaseModel):
 
 
 class JobApplication(BaseModel):
+    status_choices = [
+        ("APPLIEd", "Applied"),
+        ("SCREENING", " Screening"),
+        ("SHORT_LISTED", "Short Listed"),
+        ("REJECTED", "Rejected"),
+        ("SELECTED", "Selected")
+    ]
     job = models.ForeignKey(Job , on_delete=models.CASCADE, related_name="job_applications" )
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_applications")
+    interview_date = models.DateTimeField(null=True, blank=True)
+    status = models.CharField(choices=status_choices, max_length=20)
+
+
+
+    
     
