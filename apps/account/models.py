@@ -29,6 +29,11 @@ class UserProfile(BaseModel):
     address = models.TextField(max_length=50)
     bio = models.TextField(max_length=1000)
     resume  =models.FileField(null=True, blank=True, upload_to='resumes')
+    # first_name = models.TextField(max_length= 20,null=True, blank=True )
+    # middle_name = models.TextField(max_length= 10,null=True, blank=True )
+    # last_name = models.TextField(max_length= 20,null=True, blank=True )
+
+
 
     def __str__(self):
         return f"Profile of {self.user.email}"
