@@ -18,3 +18,4 @@ def redirect_to_home_if_authenticated(func):
             return redirect('home')
         return func(*args, **kwargs)
     return inner_func
+

@@ -58,7 +58,7 @@
                                 You are applying for the role of {{ job.title }}
                             </div>
                             <div class="modal-footer">
-                                <a href="#" class="btn btn-outline-success">Apply</a>
+                                <a href="{% url 'job_apply' job.uuid %}" class="btn btn-outline-success">Apply</a>
                                 <button type="button" class="btn btn-success" data-dismiss="modal">Cancel
                                 </button>
                             </div>
@@ -68,7 +68,7 @@
                 {% else %}
                 <a href="#" onclick="login_required()" class="btn btn-outline-success">Apply</a>
                 {% endif %}
-                <a href="#" class="btn btn-success">Details</a>
+                <a href="{% url 'job_detail' job.uuid %}" class="btn btn-success">Details</a>
             </div>
         </div>
     </div>
@@ -76,5 +76,5 @@
 </div>
 <br>
 {% endfor %}
-{# {% include 'includes/pagination.html' %}#}
+{% include 'includes/pagination.html' %}
 {% endblock %}

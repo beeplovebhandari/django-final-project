@@ -118,3 +118,4 @@ def user_account_activation(request, username, key):
     else:
         messages.error(request, "Invalid Link OR The Link Has Been Expired !!")
     return redirect('user_login')
+
