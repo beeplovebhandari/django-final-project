@@ -1,0 +1,65 @@
+
+{% extends 'layouts/base_home.html' %}
+{% load crispy_forms_tags %}
+
+{% block in_content %}
+<!DOCTYPE html>
+<head>
+    <h1>{{ title }}</h1>
+  <title>FAQs</title>
+  <style>
+    .faq {
+      margin-bottom: 20px;
+    }
+    .question {
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .answer {
+      font-weight: bold;
+      display: none;
+      margin-top: 8px;
+    }
+    .answer.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<h1 style="text-align: center;">FAQs</h1>
+
+<div class="faq">
+  <div class="question" style="color: purple;">Q: What are your opening hours?</div>
+  <div class="answer" style="color: red;">A: We are open from 9 AM to 10 PM every day.</div>
+</div><br>
+
+<div class="faq">
+  <div class="question" style="color: purple;">Q: How Can We Apply For Jobs From  This Job Portal Site?</div>
+  <div class="answer" style="color: red;">A: You can apply for a job on this site by simply clicking Apply option.</div>
+</div><br>
+
+<div class="faq">
+  <div class="question" style="color: purple;">Q: How can we activate our account?</div>
+  <div class="answer" style="color: red; "A>: You can activate your account by verifying your email address.</div>
+</div><br>
+
+<div class="faq">
+    <div class="question" style="color: purple;">Q: How can we complete our Profile?</div>
+    <div class="answer" style="color: red;">A: You can simply complete your profile by submiting all required field given in the form.</div>
+  </div><br>
+  
+
+<script>
+  const questions = document.querySelectorAll('.question');
+  questions.forEach(question => {
+    question.addEventListener('click', () => {
+      question.nextElementSibling.classList.toggle('active');
+    });
+  });
+</script>
+
+</body>
+</html>
+
+{% endblock %}

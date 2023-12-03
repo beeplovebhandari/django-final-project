@@ -45,7 +45,7 @@ class JobApplication(BaseModel):
     interview_date = models.DateTimeField(null=True, blank=True)
     status = models.CharField(choices=status_choices, max_length=20)
 
-
-
-    
+class FAQsview(BaseModel):
+    FAQs = models.TextField(max_length=25)
+    Answwers = models.TextField(max_length=50)
     

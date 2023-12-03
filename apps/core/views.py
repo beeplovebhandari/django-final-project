@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from django.utils.decorators import method_decorator
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, TemplateView
 from apps.core.models import Job, JobApplication, Category
 from django.urls import reverse_lazy
 
@@ -120,3 +120,8 @@ class ContactView(CreateView):
         context['title'] = "Contact Us"
         context['contact_active'] = 'active'
         return context
+
+class FAQsview(TemplateView):
+    template_name = 'core/faqs.html'
+
+
